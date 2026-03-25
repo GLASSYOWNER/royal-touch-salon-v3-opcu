@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<!-- V3 Elite Cyberpunk | Accent:#818cf8 | GitHub→Vercel | AI Website Factory -->
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Touch Salon | Innovating Your Path to Success</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ["Inter", "sans-serif"] },
+                    colors: { 
+                        brand: "#818cf8",
+                        dark: "#050505",
+                        panel: "#080808"
+                    },
+                    animation: {
+                        "glow-pulse": "glow-pulse 2s ease-in-out infinite",
+                        "scan": "scan 3s linear infinite",
+                        "float": "float 6s ease-in-out infinite"
+                    },
+                    keyframes: {
+                        "glow-pulse": { "0%, 100%": { opacity: "0.3" }, "50%": { opacity: "0.6" } },
+                        "scan": { "0%": { transform: "translateY(-100%)" }, "100%": { transform: "translateY(100vh)" } },
+                        "float": { "0%, 100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-20px)" } }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #050505; color: #a3a3a3; cursor: none; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .accent-glow { background: rgba(129, 140, 248, 0.15); filter: blur(100px); border-radius: 100%; }
+        .primary-btn { background: #818cf8; color: #000; box-shadow: 0 0 30px rgba(129, 140, 248, 0.4); transition: all 0.3s ease; }
+        .primary-btn:hover { box-shadow: 0 0 50px rgba(129, 140, 248, 0.6); transform: scale(1.05); }
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        #custom-cursor { width: 400px; height: 400px; background: radial-gradient(circle, rgba(129,140,248,0.15) 0%, rgba(129,140,248,0) 70%); pointer-events: none; position: fixed; z-index: 9999; transform: translate(-50%, -50%); transition: transform 0.1s ease-out; }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: #050505; }
+        ::-webkit-scrollbar-thumb { background: #818cf8; border-radius: 10px; }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+
+    <div id="custom-cursor"></div>
+
+    <!-- NAVBAR -->
+    <nav id="nav" class="fixed top-0 w-full z-50 transition-all duration-300 border-b border-white/5 bg-[#050505]/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-black tracking-tighter uppercase italic">
+                <span class="text-[#818cf8]">Royal</span> Touch Salon
+            </div>
+            <div class="hidden md:flex gap-8 text-[10px] font-black tracking-[0.3em] uppercase items-center">
+                <a href="#services" class="hover:text-[#818cf8] transition-colors">Services</a>
+                <a href="#system" class="hover:text-[#818cf8] transition-colors">System</a>
+                <a href="#about" class="hover:text-[#818cf8] transition-colors">About</a>
+                <a href="#gallery" class="hover:text-[#818cf8] transition-colors">Gallery</a>
+                <a href="https://wa.me/919336051388" target="_blank" class="px-6 py-2 border border-[#818cf8] text-[#818cf8] hover:bg-[#818cf8] hover:text-black transition-all rounded-full">Book Now</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#050505] p-10 flex-col gap-6 text-center text-xs tracking-widest uppercase border-b border-white/10">
+            <a href="#services" onclick="toggleMenu()">Services</a>
+            <a href="#system" onclick="toggleMenu()">System</a>
+            <a href="#about" onclick="toggleMenu()">About</a>
+            <a href="https://wa.me/919336051388">Book Now</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+            <div class="accent-glow absolute -top-20 -left-20 w-[600px] h-[600px] animate-glow-pulse"></div>
+            <div class="accent-glow absolute bottom-0 right-0 w-[800px] h-[800px] opacity-20"></div>
+            <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+            <div class="absolute top-0 left-[20%] w-[2px] h-full bg-[#818cf8]/5 animate-scan"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+            <div class="reveal">
+                <div class="inline-block px-4 py-1 border border-[#818cf8]/30 rounded-full mb-6 bg-[#818cf8]/5">
+                    <span class="text-[#818cf8] text-[10px] font-black tracking-widest uppercase animate-pulse">● Node Active: Kanpur Central</span>
+                </div>
+                <h1 class="text-6xl md:text-8xl font-black leading-none uppercase tracking-tighter text-white mb-8">
+                    Innovating Your <span class="text-[#818cf8]">Path To Success</span> Today
+                </h1>
+                <p class="text-lg text-neutral-400 mb-10 max-w-xl leading-relaxed">
+                    Royal Touch Salon provides professional strategic planning and operational excellence powered by cutting-edge industrial technology and elite digital transformation frameworks.
+                </p>
+                <div class="flex flex-wrap gap-6 mb-12">
+                    <a href="https://wa.me/919336051388" target="_blank" class="primary-btn px-10 py-5 font-black uppercase tracking-widest text-sm rounded-full">
+                        Initiate Contact →
+                    </a>
+                    <div class="flex items-center gap-4">
+                        <div class="flex -space-x-4">
+                            <img src="https://i.pravatar.cc/100?u=1" class="w-12 h-12 rounded-full border-2 border-dark" alt="">
+                            <img src="https://i.pravatar.cc/100?u=2" class="w-12 h-12 rounded-full border-2 border-dark" alt="">
+                            <img src="https://i.pravatar.cc/100?u=3" class="w-12 h-12 rounded-full border-2 border-dark" alt="">
+                        </div>
+                        <div class="text-[10px] uppercase font-bold tracking-widest">
+                            <span class="text-white">Join 10k+ Clients</span><br>
+                            <span class="text-[#818cf8]">Elite Global Network</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-3 gap-8 pt-8 border-t border-white/10">
+                    <div>
+                        <div class="text-3xl font-black text-[#818cf8]" data-count="4.9">0</div>
+                        <div class="text-[10px] uppercase tracking-widest">Rating</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-[#818cf8]" data-count="1072">0</div>
+                        <div class="text-[10px] uppercase tracking-widest">Reviews</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-[#818cf8]" data-count="6">0</div>
+                        <div class="text-[10px] uppercase tracking-widest">Services</div>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal relative lg:block hidden">
+                <div class="absolute -inset-4 bg-[#818cf8]/20 blur-3xl rounded-[40px] animate-float"></div>
+                <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1400&q=85" alt="Hero" class="relative rounded-[32px] border border-white/10 w-full h-[600px] object-cover shadow-2xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="py-32 relative bg-dark">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col items-center mb-20 text-center">
+                <h2 class="text-[10px] font-black text-[#818cf8] tracking-[0.5em] uppercase mb-4">Functional Capabilities</h2>
+                <h3 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter">Core Specializations</h3>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="glass p-10 rounded-3xl border-t-2 border-[#818cf8] hover:translate-y-[-10px] transition-all duration-500 reveal">
+                    <div class="text-4xl mb-6">⚡</div>
+                    <div class="inline-block px-3 py-1 bg-[#818cf8]/10 text-[#818cf8] text-[9px] font-bold rounded-full mb-4">POPULAR</div>
+                    <h4 class="text-xl font-bold text-white uppercase mb-4 tracking-wider">Strategic Planning</h4>
+                    <p class="text-sm leading-relaxed mb-6">Professional Strategic Planning powered by cutting-edge technology and data-driven insights.</p>
+                    <a href="#" class="text-[10px] font-black text-[#818cf8] tracking-widest uppercase hover:underline">Analyze Parameters →</a>
+                </div>
+                <!-- Card 2 -->
+                <div class="glass p-10 rounded-3xl border-t-2 border-[#818cf8] hover:translate-y-[-10px] transition-all duration-500 reveal" style="transition-delay: 0.1s;">
+                    <div class="text-4xl mb-6">🔥</div>
+                    <h4 class="text-xl font-bold text-white uppercase mb-4 tracking-wider">Digital Transformation</h4>
+                    <p class="text-sm leading-relaxed mb-6">Professional Digital Transformation powered by cutting-edge technology and cloud architecture.</p>
+                    <a href="#" class="text-[10px] font-black text-[#818cf8] tracking-widest uppercase hover:underline">Analyze Parameters →</a>
+                </div>
+                <!-- Card 3 -->
+                <div class="glass p-10 rounded-3xl border-t-2 border-[#818cf8] hover:translate-y-[-10px] transition-all duration-500 reveal" style="transition-delay: 0.2s;">
+                    <div class="text-4xl mb-6">💎</div>
+                    <h4 class="text-xl font-bold text-white uppercase mb-4 tracking-wider">Market Analysis</h4>
+                    <p class="text-sm leading-relaxed mb-6">Professional Market Analysis powered by cutting-edge technology and predictive modeling.</p>
+                    <a href="#" class="text-[10px] font-black text-[#818cf8] tracking-widest uppercase hover:underline">Analyze Parameters →</a>
+                </div>
+                <!-- Card 4 -->
+                <div class="glass p-10 rounded-3xl border-t-2 border-[#818cf8] hover:translate-y-[-10px] transition-all duration-500 reveal">
+                    <div class="text-4xl mb-6">🚀</div>
+                    <h4 class="text-xl font-bold text-white uppercase mb-4 tracking-wider">Business Consulting</h4>
+                    <p class="text-sm leading-relaxed mb-6">Professional Business Consulting powered by cutting-edge technology for maximum ROI.</p>
+                    <a href="#" class="text-[10px] font-black text-[#818cf8] tracking-widest uppercase hover:underline">Analyze Parameters →</a>
+                </div>
+                <!-- Card 5 -->
+                <div class="glass p-10 rounded-3xl border-t-2 border-[#818cf8] hover:translate-y-[-10px] transition-all duration-500 reveal" style="transition-delay: 0.1s;">
+                    <div class="text-4xl mb-6">🛡️</div>
+                    <h4 class="text-xl font-bold text-white uppercase mb-4 tracking-wider">Project Management</h4>
+                    <p class="text-sm leading-relaxed mb-6">Professional Project Management powered by cutting-edge technology and agile workflows.</p>
+                    <a href="#" class="text-[10px] font-black text-[#818cf8] tracking-widest uppercase hover:underline">Analyze Parameters →</a>
+                </div>
+                <!-- Card 6 -->
+                <div class="glass p-10 rounded-3xl border-t-2 border-[#818cf8] hover:translate-y-[-10px] transition-all duration-500 reveal" style="transition-delay: 0.2s;">
+                    <div class="text-4xl mb-6">⚙️</div>
+                    <h4 class="text-xl font-bold text-white uppercase mb-4 tracking-wider">Operational Excellence</h4>
+                    <p class="text-sm leading-relaxed mb-6">Professional Operational Excellence powered by cutting-edge technology and lean principles.</p>
+                    <a href="#" class="text-[10px] font-black text-[#818cf8] tracking-widest uppercase hover:underline">Analyze Parameters →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SYSTEM PANEL -->
+    <section id="system" class="py-24 bg-panel border-y border-white/5 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="flex items-center gap-4 mb-12">
+                <div class="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                <div class="text-[10px] font-bold tracking-[0.4em] uppercase text-green-500">System Monitoring Online</div>
+            </div>
+            <div class="grid lg:grid-cols-4 gap-12 mb-20">
+                <div class="reveal">
+                    <div class="text-5xl font-black text-[#818cf8] mb-2" data-count="10720">0</div>
+                    <div class="text-[9px] font-bold tracking-widest uppercase text-neutral-500">Clients Served</div>
+                </div>
+                <div class="reveal" style="transition-delay: 0.1s;">
+                    <div class="text-5xl font-black text-green-500 mb-2" data-count="35">0</div>
+                    <div class="text-[9px] font-bold tracking-widest uppercase text-neutral-500">Ops / Day</div>
+                </div>
+                <div class="reveal" style="transition-delay: 0.2s;">
+                    <div class="text-5xl font-black text-green-500 mb-2">98.5%</div>
+                    <div class="text-[9px] font-bold tracking-widest uppercase text-neutral-500">Satisfaction Rate</div>
+                </div>
+                <div class="reveal" style="transition-delay: 0.3s;">
+                    <div class="text-5xl font-black text-green-500 mb-2">99.97%</div>
+                    <div class="text-[9px] font-bold tracking-widest uppercase text-neutral-500">Network Uptime</div>
+                </div>
+            </div>
+            <div class="bg-black/50 p-6 rounded-2xl border border-white/5 font-mono text-xs overflow-hidden">
+                <div class="flex gap-2 mb-4 border-b border-white/5 pb-2">
+                    <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                    <div class="w-2 h-2 rounded-full bg-yellow-500"></div>
+                    <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                </div>
+                <p class="text-green-500 mb-1">> INITIALIZING NODE ROYAL_TOUCH_...</p>
+                <p class="text-neutral-500 mb-1">> Establishing Secure Handshake... SUCCESS</p>
+                <p class="text-neutral-500 mb-1">> Remote IP: 103.21.xx.xx</p>
+                <p class="text-neutral-500 mb-1">> Location: Kanpur, Uttar Pradesh, IN</p>
+                <p class="text-[#818cf8] mt-4">> STATUS: OPERATIONAL_EXCELLENCE_ENABLED</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-32 bg-dark relative">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
+            <div class="order-2 lg:order-1 reveal relative">
+                <div class="absolute -inset-10 accent-glow opacity-30 animate-glow-pulse"></div>
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=85" alt="Office" class="relative rounded-[32px] border border-white/10 w-full h-[500px] object-cover">
+            </div>
+            <div class="order-1 lg:order-2 reveal">
+                <h2 class="text-[10px] font-black text-[#818cf8] tracking-[0.5em] uppercase mb-4">Core Philosophy</h2>
+                <h3 class="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-8 leading-none">Redefining Precision</h3>
+                <p class="text-neutral-400 mb-10 leading-relaxed">
+                    At Royal Touch Salon, we believe that success is a science. Our methodology combines decades of industry experience with the latest technological advancements to deliver results that are not just measurable, but transformative.
+                </p>
+                <div class="grid grid-cols-2 gap-8 mb-12">
+                    <div>
+                        <div class="text-3xl font-black text-[#818cf8]">4.9★</div>
+                        <div class="text-[10px] uppercase font-bold tracking-widest text-neutral-500">Expert Rating</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-[#818cf8]">1072+</div>
+                        <div class="text-[10px] uppercase font-bold tracking-widest text-neutral-500">Verified Clients</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-[#818cf8]">6</div>
+                        <div class="text-[10px] uppercase font-bold tracking-widest text-neutral-500">Major Verticals</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-black text-[#818cf8]">24/7</div>
+                        <div class="text-[10px] uppercase font-bold tracking-widest text-neutral-500">Live Support</div>
+                    </div>
+                </div>
+                <a href="https://wa.me/919336051388" class="primary-btn inline-block px-10 py-5 font-black uppercase tracking-widest text-sm rounded-full">
+                    Connect With Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="py-32 bg-panel">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col items-center mb-20 text-center">
+                <h2 class="text-[10px] font-black text-[#818cf8] tracking-[0.5em] uppercase mb-4">Feedback Loop</h2>
+                <h3 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter">Client Testimony</h3>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass p-10 rounded-3xl border-l-4 border-[#818cf8] reveal">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-[#818cf8] to-purple-400"></div>
+                        <div>
+                            <div class="text-white font-bold uppercase text-sm tracking-wider">Rahul S.</div>
+                            <div class="text-[10px] text-[#818cf8] font-bold uppercase">Verified Partner</div>
+                        </div>
+                    </div>
+                    <p class="text-neutral-400 italic leading-relaxed">"Royal Touch Salon delivered beyond expectations. Their strategic approach to our complex digital transformation was flawless."</p>
+                </div>
+                <div class="glass p-10 rounded-3xl border-l-4 border-[#818cf8] reveal" style="transition-delay: 0.1s;">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-[#818cf8] to-blue-400"></div>
+                        <div>
+                            <div class="text-white font-bold uppercase text-sm tracking-wider">Priya M.</div>
+                            <div class="text-[10px] text-[#818cf8] font-bold uppercase">Regular Client</div>
+                        </div>
+                    </div>
+                    <p class="text-neutral-400 italic leading-relaxed">"Precision and results. Best decision we've made this quarter. Their operational excellence framework is world-class."</p>
+                </div>
+                <div class="glass p-10 rounded-3xl border-l-4 border-[#818cf8] reveal" style="transition-delay: 0.2s;">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-[#818cf8] to-indigo-400"></div>
+                        <div>
+                            <div class="text-white font-bold uppercase text-sm tracking-wider">Amit V.</div>
+                            <div class="text-[10px] text-[#818cf8] font-bold uppercase">Loyal Enterprise</div>
+                        </div>
+                    </div>
+                    <p class="text-neutral-400 italic leading-relaxed">"World-class execution with zero compromise. The team at Royal Touch Salon defines what modern professional services should be."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY -->
+    <section id="gallery" class="py-32 bg-dark">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col items-center mb-20 text-center">
+                <h2 class="text-[10px] font-black text-[#818cf8] tracking-[0.5em] uppercase mb-4">Visual Matrix</h2>
+                <h3 class="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter">Operational Environment</h3>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="overflow-hidden rounded-3xl group border border-white/10 reveal h-[320px]">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=85" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" alt="Gallery 1">
+                </div>
+                <div class="overflow-hidden rounded-3xl group border border-white/10 reveal h-[320px]" style="transition-delay: 0.1s;">
+                    <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=85" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" alt="Gallery 2">
+                </div>
+                <div class="overflow-hidden rounded-3xl group border border-white/10 reveal h-[320px]" style="transition-delay: 0.2s;">
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&q=85" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" alt="Gallery 3">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="cta" class="py-40 relative overflow-hidden bg-dark text-center">
+        <div class="absolute inset-0 flex justify-center items-center">
+            <div class="accent-glow w-[600px] h-[600px] opacity-40 animate-glow-pulse"></div>
+        </div>
+        <div class="max-w-3xl mx-auto px-6 relative z-10 reveal">
+            <h2 class="text-6xl md:text-8xl font-black text-white uppercase tracking-tighter mb-10 leading-none">Ready To <span class="text-[#818cf8]">Ascend?</span></h2>
+            <p class="text-neutral-400 text-lg mb-12 max-w-xl mx-auto">Contact the Royal Touch Salon elite team today and transform your business vision into operational reality.</p>
+            <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                <a href="https://wa.me/919336051388" target="_blank" class="primary-btn px-12 py-5 font-black uppercase tracking-widest text-sm rounded-full">WhatsApp Protocol</a>
+                <a href="tel:+919336051388" class="px-12 py-5 font-black uppercase tracking-widest text-sm rounded-full border border-white/20 text-white hover:bg-white hover:text-black transition-all">Direct Uplink</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-32 bg-panel">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-3 gap-8 mb-20">
+                <div class="glass p-10 rounded-3xl reveal">
+                    <div class="text-[#818cf8] text-2xl mb-6 font-black tracking-widest uppercase">Location</div>
+                    <p class="text-neutral-400 text-sm leading-relaxed uppercase tracking-tighter">Gulmohar Residency, Plot no.1 New azad nagar tendulkar mega store, near anandeshwar construction, Kalyanpur, Kanpur, Uttar Pradesh 208017, India</p>
+                </div>
+                <div class="glass p-10 rounded-3xl reveal" style="transition-delay: 0.1s;">
+                    <div class="text-[#818cf8] text-2xl mb-6 font-black tracking-widest uppercase">Contact</div>
+                    <p class="text-white text-xl font-bold mb-2">+91 9336051388</p>
+                    <p class="text-neutral-500 text-xs uppercase tracking-widest font-bold">Available 24/7 Digital Support</p>
+                </div>
+                <div class="glass p-10 rounded-3xl reveal" style="transition-delay: 0.2s;">
+                    <div class="text-[#818cf8] text-2xl mb-6 font-black tracking-widest uppercase">Hours</div>
+                    <div class="space-y-2 text-sm uppercase font-bold tracking-widest">
+                        <div class="flex justify-between"><span>Mon - Fri</span><span class="text-white">09:00 - 21:00</span></div>
+                        <div class="flex justify-between"><span>Sat - Sun</span><span class="text-white">10:00 - 18:00</span></div>
+                    </div>
+                </div>
+            </div>
+            <div class="rounded-3xl overflow-hidden h-[450px] border border-white/10 reveal">
+                <iframe 
+                    class="w-full h-full grayscale invert opacity-50 contrast-125"
+                    src="https://maps.google.com/maps?q=Gulmohar%20Residency%2C%20Plot%20no.1%20New%20azad%20nagar%20tendulkar%20mega%20store%2C%20near%20anandeshwar%20construction%2C%20Kalyanpur%2C%20Kanpur%2C%20Uttar%20Pradesh%20208017%2C%20India&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#030303] py-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-16 mb-20">
+                <div>
+                    <div class="text-2xl font-black tracking-tighter uppercase italic mb-8">
+                        <span class="text-[#818cf8]">Royal</span> Touch Salon
+                    </div>
+                    <p class="text-neutral-500 text-sm leading-relaxed">
+                        Innovating Your Path to Success Today through expert strategic planning and world-class operational excellence.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black tracking-[0.4em] uppercase text-white mb-8">Navigation</h4>
+                    <ul class="space-y-4 text-xs font-bold uppercase tracking-widest">
+                        <li><a href="#services" class="hover:text-[#818cf8] transition-colors">Services</a></li>
+                        <li><a href="#system" class="hover:text-[#818cf8] transition-colors">System Monitoring</a></li>
+                        <li><a href="#about" class="hover:text-[#818cf8] transition-colors">About Firm</a></li>
+                        <li><a href="#contact" class="hover:text-[#818cf8] transition-colors">Contact Terminal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-[10px] font-black tracking-[0.4em] uppercase text-white mb-8">Newsletter Protocol</h4>
+                    <div class="relative">
+                        <input type="email" placeholder="ENCRYPTED@EMAIL.COM" class="w-full bg-white/5 border border-white/10 px-6 py-4 rounded-full text-[10px] font-black tracking-widest outline-none focus:border-[#818cf8] transition-colors">
+                        <button class="absolute right-2 top-2 bg-[#818cf8] text-black w-10 h-10 rounded-full font-black">→</button>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col md:row justify-between items-center pt-10 border-t border-white/5 text-[10px] font-black uppercase tracking-widest text-neutral-600">
+                <div>© 2026 ROYAL TOUCH SALON. ALL RIGHTS RESERVED.</div>
+                <div class="flex gap-8 mt-6 md:mt-0">
+                    <a href="#" class="hover:text-[#818cf8]">Privacy Policy</a>
+                    <a href="#" class="hover:text-[#818cf8]">Terms of Operation</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Custom Cursor Lerp
+        const cursor = document.getElementById('custom-cursor');
+        let cursorX = 0, cursorY = 0;
+        let targetX = 0, targetY = 0;
+
+        document.addEventListener('mousemove', e => {
+            targetX = e.clientX;
+            targetY = e.clientY;
+        });
+
+        function animateCursor() {
+            cursorX += (targetX - cursorX) * 0.1;
+            cursorY += (targetY - cursorY) * 0.1;
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Scroll Reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        reveals.forEach(el => observer.observe(el));
+
+        // Navbar Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('nav');
+            if(window.scrollY > 50) {
+                nav.classList.add('py-2', 'bg-[#050505]');
+                nav.classList.remove('py-4', 'bg-[#050505]/80');
+            } else {
+                nav.classList.add('py-4', 'bg-[#050505]/80');
+                nav.classList.remove('py-2', 'bg-[#050505]');
+            }
+        });
+
+        // Counter Animation
+        const counters = document.querySelectorAll('[data-count]');
+        const counterObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    const target = parseFloat(entry.target.getAttribute('data-count'));
+                    const duration = 2000;
+                    const startTime = performance.now();
+                    
+                    function update(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const current = progress * target;
+                        
+                        if(target % 1 === 0) {
+                            entry.target.innerText = Math.floor(current).toLocaleString() + (target > 1000 ? '+' : '');
+                        } else {
+                            entry.target.innerText = current.toFixed(1) + (target < 6 ? '★' : '');
+                        }
+
+                        if(progress < 1) requestAnimationFrame(update);
+                    }
+                    requestAnimationFrame(update);
+                    counterObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 1 });
+
+        counters.forEach(counter => counterObserver.observe(counter));
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        }
+        
+        menuBtn.addEventListener('click', toggleMenu);
+
+        // All WhatsApp links to _blank
+        document.querySelectorAll('a[href^="https://wa.me"]').forEach(link => {
+            link.setAttribute('target', '_blank');
+        });
+    </script>
+</body>
+</html></html>
